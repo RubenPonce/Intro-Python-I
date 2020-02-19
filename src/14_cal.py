@@ -30,3 +30,24 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+if len(sys.argv) == 1:
+  theMonth = datetime.now().month
+  theYear = datetime.now().year
+  print(calendar.month(theYear, theMonth)) 
+  quit()
+elif len(sys.argv) == 2:
+  theMonth = int(sys.argv[1])
+  theYear = datetime.now().year
+  print(calendar.month(theYear, theMonth))
+  quit()
+
+elif len(sys.argv) == 3:
+  theMonth = int(sys.argv[1])
+  theYear = int(sys.argv[2])
+  print(calendar.month(theYear, theMonth))
+  quit()
+
+elif len(sys.argv) > 3:
+  print("****USAGE**** \n This program will do one of three things \n 1. If it is ran it will return the current calendar for your month & year \n 2. It will accept you passing in a month in the format of [01] without brackets, and will assume the year you want is the current year \n 3. you can pass in a month in the format of [01] and a year in the format of [1999]. ex [02 1999] but without brackets. It will return the celandar for the respective monthand year. ")
+
